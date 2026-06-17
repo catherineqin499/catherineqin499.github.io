@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>play@3x</title>
+    <defs>
+        <linearGradient x1="16.1247544%" y1="13.9341399%" x2="84.0106659%" y2="86.8830102%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.527944712" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.187827797" offset="50.0376246%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.53002076" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chatroom-diy3" transform="translate(-91, -532)" fill="#FFFFFF">
+            <g id="编组-9" transform="translate(12, 372)">
+                <g id="play" transform="translate(79, 160)">
+                    <circle id="椭圆形" stroke="url(#linearGradient-1)" fill-opacity="0.202086976" cx="20" cy="20" r="19.5"></circle>
+                    <path d="M22.8988991,15.9749164 L28.0838361,23.2948274 C28.6310878,24.0674181 28.4484145,25.1373617 27.6758238,25.6846134 C27.3861489,25.8897998 27.0399201,26 26.684937,26 L16.315063,26 C15.3682892,26 14.6007773,25.2324881 14.6007773,24.2857143 C14.6007773,23.9307312 14.7109775,23.5845023 14.9161639,23.2948274 L20.1011009,15.9749164 C20.6483526,15.2023257 21.7182962,15.0196524 22.4908869,15.5669042 C22.6489674,15.6788779 22.7869254,15.8168358 22.8988991,15.9749164 Z" id="三角形" transform="translate(21.5, 20) rotate(90) translate(-21.5, -20)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
