@@ -278,6 +278,9 @@ body{font-weight:400}
 
 /* ===== 呼吸感强化(桌面) ===== */
 .pad-y,.bet{padding-top:clamp(140px,22vh,300px);padding-bottom:clamp(140px,22vh,300px)}
+/* process→screens 两模块间距缩小 50%(各自减半) */
+.phases.pad-y{padding-bottom:clamp(35px,5.5vh,75px)}
+[data-label="screens"].pad-y{padding-top:clamp(35px,5.5vh,75px)}
 .bet .bethead{margin-bottom:clamp(40px,7vw,96px)}
 #about{padding:22vh var(--pad)}
 .eyebrow{margin-bottom:6px}
@@ -288,6 +291,8 @@ p.lead{max-width:54ch}
 /* ===== 移动端适配(流体单位，对齐参考站做法) ===== */
 @media(max-width:920px){
   section,.pad-y,.bet{padding-top:clamp(90px,15vh,170px);padding-bottom:clamp(90px,15vh,170px)}
+  .phases.pad-y{padding-bottom:clamp(22px,3.75vh,42px)}
+  [data-label="screens"].pad-y{padding-top:clamp(22px,3.75vh,42px)}
 }
 @media(max-width:680px){
   #hero{padding:104px var(--pad) 76px}
@@ -348,7 +353,7 @@ p.lead{max-width:54ch}
 @media(max-width:820px){.case-left .case-logo{height:clamp(46px,13vw,90px)}}
 .case-split .case-sub{margin-top:22px;font-size:clamp(17px,1.9vw,23px);color:var(--ink)}
 .case-split .case-meta{margin-top:clamp(40px,6vh,72px)}
-.case-split .northstar{margin-top:clamp(28px,4vh,46px);gap:clamp(22px,2.6vw,46px);justify-content:flex-start}
+.case-split .northstar{margin-top:clamp(28px,4vh,46px);gap:clamp(22px,2.6vw,46px);justify-content:flex-start;overflow:visible;border-radius:0}
 .case-split .northstar .ns{flex:0 0 auto;min-width:0;padding:0}
 .case-split .northstar .ns .v{font-size:clamp(28px,3.2vw,44px);white-space:nowrap}
 .case-split .case-meta{justify-content:flex-start}
@@ -429,7 +434,10 @@ p.lead{max-width:54ch}
 
 /* 用户声音 · 横向自动滚动卡片墙(framer 社区资源 ticker) */
 .rs-ticker{margin-top:clamp(64px,10vh,130px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.rs-track{display:flex;gap:clamp(18px,2vw,28px);width:max-content;animation:rsscroll 80s linear infinite;will-change:transform}
+.rs-track{display:flex;gap:clamp(18px,2vw,28px);width:max-content;animation:rsscroll 80s linear infinite;will-change:transform;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.rs-track.dragging{cursor:grabbing}
+.rs-track.js-driven{animation:none!important}
+.rs-track img{-webkit-user-drag:none;user-drag:none}
 .rs-ticker:hover .rs-track{animation-play-state:paused}
 .rs-card{flex:0 0 auto;width:clamp(240px,24vw,330px);display:block}
 .rs-card .rs-vis{position:relative;aspect-ratio:9/19.5;border-radius:18px;overflow:hidden;border:3px solid #101010;background:var(--card)}
@@ -481,7 +489,7 @@ p.lead{max-width:54ch}
 .c-h.c-left{text-align:left}
 .c-h.c-right{text-align:right}
 .c-links{position:absolute;z-index:3;left:var(--pad);right:var(--pad);top:50%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(12px,2vh,22px);opacity:0;will-change:opacity,transform}
-.c-links .cl{font-size:clamp(20px,3vw,40px);font-weight:300}
+.c-links .cl{font-size:clamp(26px,4vw,52px);font-weight:500}
 .c-links .cl a{border-bottom:1px solid transparent;padding-bottom:3px;transition:color .3s,border-color .3s}
 .c-links .cl a:hover{color:var(--accent);border-color:var(--accent)}
 @media(max-width:760px){.contact-stage{--ck:.72}.c-imgs .c-img{width:34vw}}
@@ -1258,7 +1266,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <div class="pin-panel" data-i="1">
           <h3>Education &<br>Skills</h3>
           <p class="p-line"><b>China University of Geosciences (Wuhan)</b> · Digital Media Art (B.A.) · 2017&ndash;2021</p>
-          <div class="p-skills"><span>Sketch</span><span>Figma</span><span>Vibe coding (Cursor · Claude Code)</span><span>HTML / CSS</span></div>
+          <div class="p-skills"><span>Sketch</span><span>Figma</span><span>Photoshop</span><span>Illustrator</span><span>After Effects</span><span>Vibe coding (Cursor · Claude Code)</span><span>HTML / CSS</span></div>
         </div>
         <!-- 3 工作经历 + 简历 -->
         <div class="pin-panel" data-i="2">
@@ -1290,7 +1298,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
       <div class="m"><div class="k">Platform</div><div class="v">iOS / Android / Web</div></div>
     </div>
     <div class="northstar fade d2">
-      <div class="ns"><div class="k">ROI</div><div class="v"><span class="nm">Membership</span> +3%</div></div>
+      <div class="ns"><div class="k">ROI</div><div class="v"><span class="nm">Membership</span> +5%</div></div>
       <div class="ns"><div class="k">First purchase</div><div class="v"><span class="nm">D0 ARPPU</span> $35</div></div>
       <div class="ns"><div class="k">Retention</div><div class="v"><span class="nm">D7</span> +36%</div></div>
     </div>
@@ -1488,7 +1496,6 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
             <div class="pw-slide"><img src="assets/Paywall/cta Paywall.webp" alt="Paywall call to action" loading="eager"></div>
             <div class="pw-slide" aria-hidden="true"><img src="assets/Paywall/center Paywall.webp" alt="" loading="eager"></div>
           </div>
-          <div class="pw-dots"><i class="on"></i><i></i><i></i></div>
         </div>
       </div></div>
     </div>
@@ -1518,24 +1525,24 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
   <div class="research">
     <div class="r-left fade">
       <h3 class="r-h">Where exactly do<br>users get stuck?</h3>
-      <p class="r-p">Instrumented the creation funnel step by step and ran 14 interviews to locate the heaviest drop-off and the real concerns behind it.</p>
+      <p class="r-p">Instrumented every step of the creation funnel to pinpoint where users drop off: the preference-tags step alone loses 10%, only 50% reach the paywall, and just 10% complete payment.</p>
       <div class="r-stats">
         <div class="rs"><div class="v">48%</div><div class="l">Character creation conversion (funnel end)</div></div>
-        <div class="rs"><div class="v">−23%</div><div class="l">Biggest single-step drop, at &ldquo;preference tags&rdquo;</div></div>
-        <div class="rs"><div class="v">14</div><div class="l">User interviews, qualitative</div></div>
+        <div class="rs"><div class="v">4</div><div class="l">Customizable options — too few steps and tags to personalize</div></div>
+        <div class="rs"><div class="v">98%</div><div class="l">Creation completion rate (final)</div></div>
       </div>
     </div>
     <div class="r-right fade d1">
       <div class="icards">
-        <div class="ic"><span class="ic-tag">Cognitive load</span><h4>No idea what they&rsquo;d get at the end</h4><p>The result only appears last, so users lack a payoff to anticipate and lose momentum step by step.</p></div>
-        <div class="ic"><span class="ic-tag">Flow friction</span><h4>The preference-tags step is too heavy</h4><p>Too many tags, high mental cost — the single biggest drop in the funnel (−23%).</p></div>
-        <div class="ic"><span class="ic-tag">Expectation</span><h4>Waiting on generation breeds anxiety</h4><p>A wait with no progress or preview makes users question whether it&rsquo;s worth continuing.</p></div>
+        <div class="ic"><span class="ic-tag">Result preview</span><h4>No result preview before payment</h4><p>Users can&rsquo;t see the final result before paying, so there&rsquo;s no incentive to pay and ROI stays low.</p></div>
+        <div class="ic"><span class="ic-tag">Customization</span><h4>Too few options, and they&rsquo;re not intuitive</h4><p>Option images don&rsquo;t clearly convey what each choice means and lack appeal, so users don&rsquo;t want to pick.</p></div>
+        <div class="ic"><span class="ic-tag">Paywall</span><h4>The paywall copy is vague</h4><p>Users don&rsquo;t know what they&rsquo;ll actually get after paying.</p></div>
       </div>
     </div>
   </div>
   <div class="r-bottom fade d1">
     <div class="methods"><span class="pill-eyebrow"><span class="d"></span>Methods</span><div class="m-tags"><span>Funnel analytics</span><span>User interviews</span><span>Usability testing</span><span>Competitive analysis</span></div></div>
-    <div class="keybar">The hypothesis driving it all: move result preview <b>up front</b>, face-first, and frame expectations with &ldquo;done in 30 seconds&rdquo; — cut creation anxiety and lift completion.</div>
+    <div class="keybar">The core hypothesis: bring the result preview <b>up front</b> so users see the final outcome early and build anticipation, and frame expectations with &ldquo;done in 30 seconds&rdquo; — easing creation anxiety and lifting completion.</div>
   </div>
 </section>
 
@@ -1568,19 +1575,19 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
       
     </div>
     <div class="fade d1"><div class="deltas" style="grid-template-columns:1fr;gap:16px">
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Character creation conversion</span><span class="v">+31%</span></div>
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Avg. creation time</span><span class="v">90s→52s</span></div>
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">D1 return</span><span class="v">+22%</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Creation completion rate</span><span class="v">80%→98%</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Avg. creation time</span><span class="v">15s→54s</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">D0 first purchase</span><span class="v">$5→$20</span></div>
     </div></div>
   </div>
 </section>
 
 <!-- ===== BET B ===== -->
 <section class="bet wrap" data-label="bet-b">
-  <div class="bethead"><div><span class="pill-eyebrow" style="margin-bottom:14px"><span class="d"></span>Bet 02 · Relationship</span><h2 class="lmask"><span>Gameplay that lifts<br><em>retention + first purchase</em></span></h2></div></div>
+  <div class="bethead"><div><span class="pill-eyebrow" style="margin-bottom:14px"><span class="d"></span>Bet 02 · Customization</span><h2 class="lmask"><span>Put generation<br>in the <em>user&rsquo;s hands</em></span></h2></div></div>
   <div class="two rev" style="margin-top:clamp(50px,8vw,100px)">
-    <div class="t fade"><p class="subhead">Problem</p><p class="lead">Early D7 retention was only 19% and few users made a first purchase — engagement stayed shallow, with no reason to invest.</p></div>
-    <div class="fade d1"><p class="subhead">Insight + Hypothesis</p><div class="quote">Make growth currency (EX) earnable only through genuine chat (anti-farming), and gate higher-tier interactions and Character Cards behind levels — turning emotional investment into both stickiness and a reason to make a first purchase.</div></div>
+    <div class="t fade"><p class="subhead">Problem</p><p class="lead">Interaction content was preset and one-size-fits-all — users could only receive it passively and never got the scenes or storylines they actually wanted. Novelty wore off fast, engagement stayed shallow, and there was little reason to pay.</p></div>
+    <div class="fade d1"><p class="subhead">Insight + Hypothesis</p><div class="quote">In chat, users can pick a preset action or type their own DIY prompt, and the character generates bespoke content — images, video, live action — in real time. By making controllability the highlight, users no longer passively receive content; they direct every generation, and that sense of control deepens immersion and drives both sustained engagement and first purchase.</div></div>
   </div>
   <!-- 左图片 / 右动效面板(整幅出血,撑满屏宽) -->
   <div class="dualfull" style="margin-top:clamp(50px,8vw,100px)">
@@ -1703,13 +1710,13 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
       <p class="subhead">Validation · did the data improve</p>
       <div class="ab">
         <div class="card ctrl"><div class="tag">Hard paywall</div><div class="pct">3.1%</div><div class="sub">Paid conversion</div></div>
-        <div class="card exp"><div class="tag">Contextual</div><div class="pct">4.4%</div><div class="sub">Paid conversion</div></div>
+        <div class="card exp"><div class="tag">Contextual</div><div class="pct">6.8%</div><div class="sub">Paid conversion</div></div>
       </div>
       
     </div>
     <div class="fade d1"><div class="deltas" style="grid-template-columns:1fr;gap:16px">
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Paid conversion rate</span><span class="v">+42%</span></div>
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">ARPU</span><span class="v">+28%</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Paid conversion rate</span><span class="v">3.1%→6.8%</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">ARPU</span><span class="v">$10→$25</span></div>
       <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">7-day repurchase</span><span class="v">+35%</span></div>
     </div></div>
   </div>
@@ -1720,7 +1727,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
   <span class="pill-eyebrow center fade"><span class="d"></span>User Pain Point</span>
   <h2 class="pv-h fade">One piece of feedback, <em>one iteration</em>.</h2>
   <div class="pv-stats fade d1">
-    <div class="pv-st"><div class="v">72h</div><div class="l">Avg. turnaround on<br>high-frequency feedback</div></div>
+    <div class="pv-st"><div class="v">24h</div><div class="l">Avg. turnaround on<br>high-frequency feedback</div></div>
     <div class="pv-st"><div class="v">+18%</div><div class="l">Next-day retention after<br>onboarding shipped</div></div>
   </div>
   <div class="pv-card fade d1">
@@ -1907,10 +1914,10 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
 <section class="wrap pad-y" data-label="outcomes">
   <span class="eyebrow fade">Mechanics → Results</span>
   <div class="lmask" style="margin-top:20px"><span class="allcaps" style="font-size:clamp(30px,5vw,64px)">Three bets,<br>validated results</span></div>
-  <p class="lead fade d1" style="margin-top:24px;max-width:56ch">Each bet shipped with its own A/B test and instrumentation — the deltas sit beside each case above. Here&rsquo;s what I&rsquo;d carry forward.</p>
+  <p class="lead fade d1" style="margin-top:24px;max-width:56ch">Every bet was validated against instrumentation, not opinion: did it actually lift ROI and top-ups? When the data said no, I switched strategy and kept iterating until the numbers genuinely moved. Here&rsquo;s what I&rsquo;d carry forward.</p>
   <div class="two" style="margin-top:clamp(48px,7vw,86px)">
-    <div class="t fade"><p class="subhead">Reflection</p><p class="lead">The first instrumentation didn&rsquo;t separate active vs. passive triggers, blurring attribution; I then pushed for &ldquo;measurement reviewed alongside design&rdquo;, moving data credibility upstream into the design phase.</p></div>
-    <div class="fade d1"><p class="subhead">My contribution</p><p class="lead">I led problem framing, the solutions and instrumentation for all three bets, usability testing and A/B reviews; co-built the generation and onboarding scripts with the ML team, and aligned the monetization funnel with growth.</p></div>
+    <div class="t fade"><p class="subhead">Reflection</p><p class="lead">I treated every bet as a hypothesis to be proven by data, not shipped on conviction. Each one was instrumented to ask a single question — did it actually lift ROI and top-ups? When the numbers didn&rsquo;t move, I dropped the idea and tried another angle, iterating until the data showed a real gain. That validate-or-switch loop is what I&rsquo;d carry into the next product.</p></div>
+    <div class="fade d1"><p class="subhead">My contribution</p><p class="lead">As the designer on these bets, my job was to turn each problem into a UI/UX solution that moved the numbers. I led the solution for every bet, read the funnels and ran the reviews to decide what to keep or swap, designed the right UI/UX for each fix, and kept iterating until the data showed a genuine lift in conversion, ARPU and top-ups.</p></div>
   </div>
 </section>
 
@@ -1928,7 +1935,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
           <div class="sf-item" data-i="1"><h3 class="sf-t">Systems Design</h3><div class="sf-desc"><div><p>Design interlocking systems: <b>progression levels, dual currencies, creator subscriptions</b> — connecting the retention × monetization loop.</p></div></div></div>
           <div class="sf-item" data-i="2"><h3 class="sf-t">Interaction Design</h3><div class="sf-desc"><div><p>Tame <b>high-complexity flows</b>: the creation funnel, real-time calls, 80+ screens of navigation — mobile-first, with predictable states.</p></div></div></div>
           <div class="sf-item" data-i="3"><h3 class="sf-t">Growth & Monetization</h3><div class="sf-desc"><div><p>Trigger payment <b>contextually at high-intent moments</b>: paywalls, VIP tiers, tier-skip and save flows — balancing conversion and experience.</p></div></div></div>
-          <div class="sf-item" data-i="4"><h3 class="sf-t">Data Fluency</h3><div class="sf-desc"><div><p>Own <b>instrumentation and A/B experiments</b> end to end, treating every decision as a hypothesis to validate with data.</p></div></div></div>
+          <div class="sf-item" data-i="4"><h3 class="sf-t">Data Fluency</h3><div class="sf-desc"><div><p>Own <b>instrumentation</b> end to end and treat every decision as a hypothesis — reading the funnels to keep or switch strategy until the data genuinely moves: paid conversion <b>3.1%→6.8%</b>, ARPU <b>$10→$25</b>.</p></div></div></div>
         </div>
         <div class="sf-visuals">
           <div class="sf-vis active"><div class="frame"><img src="assets/skill-01.webp" loading="lazy" decoding="async" onerror="this.remove()" alt="Product strategy — For You discovery feed and product structure"><div class="ph-slot"><div class="inner"><div class="no">01</div><div class="t">Problem framing / trade-offs</div><span class="fname">skill-01.webp</span></div></div></div></div>
@@ -2366,6 +2373,49 @@ if(rot){let i=0;setInterval(()=>{i=(i+1)%words.length;rot.style.opacity=0;rot.st
     panels.forEach((pn,i)=>pn.classList.toggle('active',i===idx));
   }
   addEventListener('scroll',pinUpd,{passive:true});addEventListener('resize',pinUpd);pinUpd();
+})();
+
+/* onboarding ticker · JS 无缝循环 + 左右拖动(替代纯 CSS marquee:gap 不计入 -50% 导致末尾停顿/接缝) */
+(function(){
+  const ticker=document.querySelector('.rs-ticker'); if(!ticker)return;
+  const track=ticker.querySelector('.rs-track'); if(!track)return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  track.classList.add('js-driven');               // 关掉 CSS 动画,改 JS 驱动
+  let x=0, half=0, speed=0, last=null;
+  let hovered=false, dragging=false, startX=0, startOff=0, moved=false;
+  function measure(){
+    const cs=getComputedStyle(track);
+    const gap=parseFloat(cs.columnGap||cs.gap||0)||0;
+    half=(track.scrollWidth+gap)/2;               // 一组(5卡+5间隔)的真实宽度
+    speed=half/80;                                // 与原 80s 节奏一致
+  }
+  function wrap(){ if(half<=0)return; x%=half; if(x>0)x-=half; } // 收进 (-half,0]
+  function apply(){ track.style.transform='translateX('+x+'px)'; }
+  measure(); apply();
+  addEventListener('resize',()=>{ measure(); wrap(); apply(); });
+  function tick(t){
+    if(last==null)last=t; const dt=(t-last)/1000; last=t;
+    if(!dragging && !hovered && !reduce){ x-=speed*dt; wrap(); apply(); }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  ticker.addEventListener('mouseenter',()=>hovered=true);
+  ticker.addEventListener('mouseleave',()=>hovered=false);
+  function down(e){ dragging=true; moved=false; track.classList.add('dragging');
+    startX=(e.touches?e.touches[0].clientX:e.clientX); startOff=x; }
+  function move(e){ if(!dragging)return;
+    const px=(e.touches?e.touches[0].clientX:e.clientX), dx=px-startX;
+    if(Math.abs(dx)>4)moved=true;
+    x=startOff+dx; wrap(); apply();
+    if(moved && e.cancelable)e.preventDefault();
+  }
+  function up(){ if(!dragging)return; dragging=false; track.classList.remove('dragging'); }
+  track.addEventListener('mousedown',down);
+  addEventListener('mousemove',move); addEventListener('mouseup',up);
+  track.addEventListener('touchstart',down,{passive:true});
+  track.addEventListener('touchmove',move,{passive:false}); addEventListener('touchend',up);
+  track.addEventListener('dragstart',e=>e.preventDefault());
+  track.addEventListener('click',e=>{ if(moved){e.preventDefault();e.stopPropagation();} },true);
 })();
 </script>
 </body>
