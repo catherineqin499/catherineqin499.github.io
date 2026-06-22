@@ -3,17 +3,29 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Catherine · UX/UI Design Portfolio · Momoso</title>
-<meta name="description" content="Catherine — UX/UI designer portfolio: designing growth, retention and revenue for AI products." />
+<title data-zh="Catherine · 产品体验设计作品集 · Momoso">Catherine · Product Experience Design Portfolio · Momoso</title>
+<meta name="description" content="Catherine — Product Experience Designer portfolio: designing growth, retention and revenue for AI products." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Catherine · UX/UI Design Portfolio" />
+<meta property="og:title" content="Catherine · Product Experience Design Portfolio" />
 <meta property="og:description" content="Designing growth, retention and revenue for AI products — the Momoso case study." />
+<meta property="og:url" content="https://catherineqin499.github.io/" />
+<meta property="og:image" content="https://catherineqin499.github.io/assets/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Catherine · Product Experience Designer portfolio" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://catherineqin499.github.io/assets/og-cover.jpg" />
+<link rel="image_src" href="https://catherineqin499.github.io/assets/og-cover.jpg" />
 <meta name="theme-color" content="#000000" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff5733'/%3E%3Ctext x='16' y='22.5' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='19' fill='%23fff'%3EC%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
 <style>
+@font-face{font-family:'MiSans';src:url('assets/fonts/misans-300.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'MiSans';src:url('assets/fonts/misans-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'MiSans';src:url('assets/fonts/misans-600.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'MiSans';src:url('assets/fonts/misans-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
 :root{
   --bg:#000; --bg-2:#0d0d0d; --card:#161616; --ink:#fff; --ink-60:rgba(255,255,255,.8); --ink-40:rgba(255,255,255,.5);
   --accent:#ff5733; --accent-soft:#ff8c6b;
@@ -22,6 +34,8 @@
   --maxw:1280px;
   --pad:clamp(18px,4vw,48px);
 }
+/* 中文站:MiSans 覆盖 CJK,拉丁回落 Manrope */
+body.zh{--f:"MiSans","Manrope",system-ui,-apple-system,sans-serif;--fd:"MiSans","Manrope",system-ui,-apple-system,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;color-scheme:dark}
 ::selection{background:var(--accent);color:#000}
@@ -198,7 +212,7 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--ink-60);max-width:60ch;line-
 .sf-stage{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden}
 .sf-grid{display:grid;grid-template-columns:0.82fr 1.3fr;gap:clamp(20px,2.6vw,44px);align-items:center;width:100%}
 .sf-list{display:flex;flex-direction:column;max-width:460px}
-.sf-item{padding:clamp(12px,2vh,22px) 0;border-bottom:1px solid var(--line);transition:opacity .4s}
+.sf-item{padding:clamp(12px,2vh,22px) 0;transition:opacity .4s}
 .sf-item:not(.active){opacity:.38}
 .sf-item .sf-t{font-family:var(--fd);font-size:clamp(20px,2.5vw,34px);font-weight:300;letter-spacing:-.01em;line-height:1.08;margin:0;transition:color .3s}
 .sf-item.active .sf-t{color:var(--accent)}
@@ -207,10 +221,11 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--ink-60);max-width:60ch;line-
 .sf-item.active .sf-desc{grid-template-rows:1fr;opacity:1}
 .sf-item .sf-desc p{font-size:clamp(13px,1.15vw,15px);color:var(--ink-60);line-height:1.7;max-width:40ch;margin:0;padding-top:14px}
 .sf-item .sf-desc p b{color:#fff;font-weight:600}
-.sf-visuals{position:relative;width:100%;height:92vh;border-radius:16px;overflow:hidden;border:3px solid #101010}
+.sf-visuals{position:relative;width:100%;aspect-ratio:16/10;height:auto;max-height:84vh;border-radius:16px;overflow:hidden;border:3px solid #101010;background:#0a0908}
 .sf-vis{position:absolute;inset:0;opacity:0;transform:scale(1.04);transition:opacity .6s ease,transform .7s cubic-bezier(.16,1,.3,1)}
 .sf-vis.active{opacity:1;transform:none}
 .sf-vis .frame{position:absolute;inset:0;border:0;border-radius:inherit}
+.sf-vis video{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;background:#0a0908}
 @media(max-width:820px){
   .sf-pin{height:auto}
   .sf-stage{position:static;height:auto;display:block;padding:clamp(40px,8vh,80px) 0}
@@ -219,7 +234,7 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--ink-60);max-width:60ch;line-
   .sf-item.active .sf-t{color:var(--ink)}
   .sf-item .sf-desc{grid-template-rows:1fr;opacity:1}
   .sf-visuals{position:static;height:auto;aspect-ratio:auto;border:0;display:flex;flex-direction:row;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
-  .sf-vis{position:static;opacity:1;transform:none;flex:0 0 64vw;height:46vh;border-radius:14px;overflow:hidden;border:3px solid #101010;scroll-snap-align:center}
+  .sf-vis{position:static;opacity:1;transform:none;flex:0 0 82vw;height:auto;aspect-ratio:16/10;border-radius:14px;overflow:hidden;border:3px solid #101010;background:#0a0908;scroll-snap-align:center}
   .sf-visuals::-webkit-scrollbar{display:none}
   .sf-visuals{scrollbar-width:none}
 }
@@ -252,9 +267,6 @@ body{font-weight:400}
 .pw-track.nosnap{transition:none}
 .pw-slide{flex:0 0 100%;height:100%}
 .pw-slide img{position:static;inset:auto;z-index:auto;background:transparent;width:100%;height:100%;object-fit:cover;display:block}
-.pw-dots{position:absolute;left:0;right:0;bottom:14px;z-index:3;display:flex;gap:7px;justify-content:center;pointer-events:none}
-.pw-dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);transition:width .3s,background .3s}
-.pw-dots i.on{width:20px;border-radius:3px;background:var(--accent)}
 @media(prefers-reduced-motion:reduce){.pw-track{transition:none}}
 /* react-bits 移植 · 卡片鼠标高光(spotlight) */
 @media(hover:hover){
@@ -1225,9 +1237,9 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
   <div class="hero-portrait" style="--x:-46vw;--y:-19vh;width:clamp(110px,13vw,220px)"><div class="frame"><img src="assets/me.webp" loading="eager" decoding="async" onerror="this.remove()" alt="Portrait of Catherine"><div class="ph-slot"><div class="inner"><div class="no">★</div><div class="t">Your portrait</div><span class="fname">me.webp</span></div></div></div></div>
   <div class="hero-scrim"></div>
   <div class="hero-title">
-    <p class="eyebrow">UX/UI Designer · 2026 · Portfolio</p>
+    <p class="eyebrow" data-zh="产品体验设计师 · 2026 · 作品集">Product Experience Designer · 2026 · Portfolio</p>
     <h1><span class="lmask in"><span>Catherine</span></span></h1>
-    <p class="hero-tag">Designing <em>growth · retention · revenue</em> for AI products</p>
+    <p class="hero-tag" data-zh="设计能驱动&lt;em&gt;增长 · 留存 · 收入&lt;/em&gt;的 AI 产品">Designing <em>growth · retention · revenue</em> for AI products</p>
   </div>
   <div class="scroll-badge">
     <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#circ" startOffset="0%">SCROLL DOWN · SCROLL DOWN · SCROLL DOWN · </textPath></text></svg>
@@ -1241,7 +1253,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
     <div class="ln lmask"><span><span class="dot"></span>COMPLEX</span></div>
     <div class="ln lmask"><span>MECHANICS,</span></div>
     <div class="ln rotline lmask"><span><span class="rotword">EFFORTLESS</span></span></div>
-    <div class="ln lmask"><span>UX —</span></div>
+    <div class="ln lmask"><span>EXPERIENCE —</span></div>
     <div class="ln lmask"><span>PROVEN.</span></div>
   </div>
 </section>
@@ -1259,29 +1271,29 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
       <div class="pin-panels">
         <!-- 1 自我介绍(能力详述统一放底部 #skills 手风琴，避免重复；文案为占位可改) -->
         <div class="pin-panel active" data-i="0">
-          <h3>Hi, I&rsquo;m <em>Catherine</em>.</h3>
-          <p class="p-self">I&rsquo;m a UX designer who pairs product thinking with hands-on execution. Using a <em>vibe-coding workflow</em>, I turn interaction concepts and product strategy into production-ready websites and hand the working code directly to engineering, closing the design-to-build gap and sharply compressing the product and project cycle.</p>
+          <h3 data-zh="你好，我是 &lt;em&gt;Catherine&lt;/em&gt;。">Hi, I&rsquo;m <em>Catherine</em>.</h3>
+          <p class="p-self" data-zh="我是一名把产品思维与亲手落地结合的产品体验设计师。借助 &lt;em&gt;vibe-coding 工作流&lt;/em&gt;，我把交互构想与产品策略直接转化为可上线的网页，并把可运行的代码交付给工程团队——弥合设计与开发之间的断层，大幅压缩产品与项目周期。">I&rsquo;m a product experience designer who pairs product thinking with hands-on execution. Using a <em>vibe-coding workflow</em>, I turn interaction concepts and product strategy into production-ready websites and hand the working code directly to engineering, closing the design-to-build gap and sharply compressing the product and project cycle.</p>
         </div>
         <!-- 2 教育 & 技能 -->
         <div class="pin-panel" data-i="1">
-          <h3>Education &<br>Skills</h3>
-          <p class="p-line"><b>China University of Geosciences (Wuhan)</b> · Digital Media Art (B.A.) · 2017&ndash;2021</p>
+          <h3 data-zh="教育背景与技能">Education &<br>Skills</h3>
+          <p class="p-line" data-zh="&lt;b&gt;中国地质大学（武汉）&lt;/b&gt; · 数字媒体艺术（本科） · 2017–2021"><b>China University of Geosciences (Wuhan)</b> · Digital Media Art (B.A.) · 2017&ndash;2021</p>
           <div class="p-skills"><span>Sketch</span><span>Figma</span><span>Photoshop</span><span>Illustrator</span><span>After Effects</span><span>Vibe coding (Cursor · Claude Code)</span><span>HTML / CSS</span></div>
         </div>
         <!-- 3 工作经历 + 简历 -->
         <div class="pin-panel" data-i="2">
-          <h3>Experience</h3>
+          <h3 data-zh="工作经历">Experience</h3>
           <div class="p-jobs">
-            <div class="pj"><b>UX Designer · Momoso (AI Companion)</b><span>2025 — Present</span></div>
-            <div class="pj"><b>UI Designer · Digital Grid (on-site)</b><span>2022 — 2024</span></div>
-            <div class="pj"><b>UI Designer · Lianyou Zhilian (Dongfeng Nissan)</b><span>2021 — 2022</span></div>
+            <div class="pj" data-zh="&lt;b&gt;产品体验设计师 · Momoso（AI 陪伴）&lt;/b&gt;&lt;span&gt;2025 — 至今&lt;/span&gt;"><b>Product Experience Designer · Momoso (AI Companion)</b><span>2025 — Present</span></div>
+            <div class="pj" data-zh="&lt;b&gt;UI 设计师 · Digital Grid（坐班）&lt;/b&gt;&lt;span&gt;2022 — 2024&lt;/span&gt;"><b>UI Designer · Digital Grid (on-site)</b><span>2022 — 2024</span></div>
+            <div class="pj" data-zh="&lt;b&gt;UI 设计师 · 联友智联（东风日产）&lt;/b&gt;&lt;span&gt;2021 — 2022&lt;/span&gt;"><b>UI Designer · Lianyou Zhilian (Dongfeng Nissan)</b><span>2021 — 2022</span></div>
           </div>
-          <a class="p-cta" href="assets/Catherine-CV.pdf" target="_blank" rel="noopener"><span class="ar">→</span> Download CV</a>
+          <a class="p-cta" href="assets/Catherine-CV.pdf" target="_blank" rel="noopener" data-zh="&lt;span class=&quot;ar&quot;&gt;→&lt;/span&gt; 下载简历"><span class="ar">→</span> Download CV</a>
         </div>
         <!-- 4 自我评价 -->
         <div class="pin-panel" data-i="3">
-          <h3>Turning complex mechanics<br>into <em>testable</em> experiences.</h3>
-          <p class="p-self">I thrive on high-complexity, mechanism-driven products. I treat every design decision as a testable hypothesis: define the problem with data, design, then prove with experiments whether it works. More than shipping, I care whether it truly solved the right problem.</p>
+          <h3 data-zh="把复杂机制&lt;br&gt;转化为&lt;em&gt;可验证&lt;/em&gt;的体验。">Turning complex mechanics<br>into <em>testable</em> experiences.</h3>
+          <p class="p-self" data-zh="我钟情于高复杂度、机制驱动的产品。我把每个设计决策都当作一个可验证的假设：用数据定义问题、做出设计，再用实验证明它是否奏效。比起单纯上线，我更在意它是否真正解决了对的问题。">I thrive on high-complexity, mechanism-driven products. I treat every design decision as a testable hypothesis: define the problem with data, design, then prove with experiments whether it works. More than shipping, I care whether it truly solved the right problem.</p>
         </div>
       </div>
     </div>
@@ -1292,15 +1304,15 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
 <section id="case" class="case-split" data-label="work">
   <div class="case-left">
     <div class="lmask"><span><img class="case-logo" src="assets/brand/Momoso_white.webp" alt="Momoso" /></span></div>
-    <p class="case-sub fade d1">An AI companion platform built on customizable AI characters and real-time, controllable interaction. Monetized through membership, with game-like mechanics that lift retention and first purchase.</p>
+    <p class="case-sub fade d1" data-zh="一个以可定制 AI 角色与实时可控互动为核心的 AI 陪伴平台，通过会员订阅变现，并用游戏化机制提升留存与首次付费。">An AI companion platform built on customizable AI characters and real-time, controllable interaction. Monetized through membership, with game-like mechanics that lift retention and first purchase.</p>
     <div class="case-meta fade d1">
-      <div class="m"><div class="k">Role</div><div class="v">Lead Designer</div></div>
-      <div class="m"><div class="k">Platform</div><div class="v">iOS / Android / Web</div></div>
+      <div class="m"><div class="k" data-zh="职责">Role</div><div class="v" data-zh="设计负责人">Lead Designer</div></div>
+      <div class="m"><div class="k" data-zh="平台">Platform</div><div class="v">iOS / Android / Web</div></div>
     </div>
     <div class="northstar fade d2">
-      <div class="ns"><div class="k">ROI</div><div class="v"><span class="nm">Membership</span> +5%</div></div>
-      <div class="ns"><div class="k">First purchase</div><div class="v"><span class="nm">D0 ARPPU</span> $35</div></div>
-      <div class="ns"><div class="k">Retention</div><div class="v"><span class="nm">D7</span> +36%</div></div>
+      <div class="ns"><div class="k">ROI</div><div class="v"><span class="nm" data-zh="会员订阅">Membership</span> +5%</div></div>
+      <div class="ns"><div class="k" data-zh="首充">First purchase</div><div class="v"><span class="nm">D0 ARPPU</span> $35</div></div>
+      <div class="ns"><div class="k" data-zh="留存">Retention</div><div class="v"><span class="nm">D7</span> +36%</div></div>
     </div>
   </div>
   <div class="case-right">
@@ -1312,15 +1324,15 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
 <section class="wrap pad-y testi" data-label="thesis">
   <div class="two">
     <div class="t">
-      <p class="case-lead fade">Reframing passive viewing<br>into <em>creation +<br>real-time control.</em></p>
-      <p class="testi-desc fade d1">Momoso&rsquo;s core: users build customizable AI characters and direct generation live (Live Action, video calls) instead of passively browsing — and game-like mechanics turn that engagement into retention and first purchase, monetized through membership. This throughline drove the three bets below.</p>
+      <p class="case-lead fade" data-zh="把被动观看重新定义为&lt;br&gt;&lt;em&gt;创造 +&lt;br&gt;实时掌控。&lt;/em&gt;">Reframing passive viewing<br>into <em>creation +<br>real-time control.</em></p>
+      <p class="testi-desc fade d1" data-zh="Momoso 的核心：用户构建可定制的 AI 角色，并实时主导生成（Live Action、视频通话），而非被动浏览——游戏化机制把这种参与转化为留存与首次付费，再通过会员订阅变现。这条主线驱动了下面三个赌注。">Momoso&rsquo;s core: users build customizable AI characters and direct generation live (Live Action, video calls) instead of passively browsing — and game-like mechanics turn that engagement into retention and first purchase, monetized through membership. This throughline drove the three bets below.</p>
     </div>
     <div class="testi-card fade d1">
       <div class="tc-head">
         <div class="tc-ava"><img src="assets/testi-avatar.webp" loading="lazy" decoding="async" onerror="this.remove()" alt="App Store reviewer avatar"></div>
-        <div class="tc-who"><b>App Store review</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; · Momoso</span></div>
+        <div class="tc-who"><b data-zh="App Store 评价">App Store review</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; · Momoso</span></div>
       </div>
-      <p class="tc-quote">I&rsquo;m honestly surprised by how real the AI avatars feel. The video calls and voice chat are immersive, and you can even customize action which makes it way more fun than other apps. Definitely one of the most creative AI apps I&rsquo;ve tried!</p>
+      <p class="tc-quote" data-zh="说实话，AI 形象的真实感让我很惊讶。视频通话和语音聊天都很有沉浸感，甚至还能自定义动作，比其他 app 有趣太多了。绝对是我用过最有创意的 AI 应用之一！">I&rsquo;m honestly surprised by how real the AI avatars feel. The video calls and voice chat are immersive, and you can even customize action which makes it way more fun than other apps. Definitely one of the most creative AI apps I&rsquo;ve tried!</p>
     </div>
   </div>
 </section>
@@ -1331,19 +1343,19 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
     <img src="assets/momoso-cover.webp" loading="lazy" onerror="this.remove()" alt="">
     <div class="cover-ph"><span class="no">★</span>Full-bleed cover image<small>Your cover image · assets/momoso-cover.webp</small></div>
   </div>
-  <p class="cover-tag fade">Not a feed to scroll —<br>a companion you <em>create</em> and <em>control</em>.</p>
+  <p class="cover-tag fade" data-zh="不是用来刷的信息流——&lt;br&gt;而是一个由你&lt;em&gt;创造&lt;/em&gt;、由你&lt;em&gt;掌控&lt;/em&gt;的伙伴。">Not a feed to scroll —<br>a companion you <em>create</em> and <em>control</em>.</p>
 </section>
 
 <!-- ===== 设计过程 · 四阶段（居中徽标 + 高亮段落 + 错落卡片） ===== -->
 <section class="phases wrap pad-y" data-label="process">
   <div class="logo-badge fade"><img src="assets/brand/MOMOSO_icon.webp" alt="MOMOSO" /></div>
-  <p class="phases-intro fade d1">From competitive research to data-driven iteration — <em>five steps</em> where every decision is validated, <span class="dim">so complex mechanics end up feeling</span> <em>effortless</em>.</p>
+  <p class="phases-intro fade d1" data-zh="从竞品研究到数据驱动迭代——&lt;em&gt;五个步骤&lt;/em&gt;，每个决策都经过验证，&lt;span class=&quot;dim&quot;&gt;让复杂的机制最终用起来也能&lt;/span&gt;&lt;em&gt;毫不费力&lt;/em&gt;。">From competitive research to data-driven iteration — <em>five steps</em> where every decision is validated, <span class="dim">so complex mechanics end up feeling</span> <em>effortless</em>.</p>
   <div class="phase-cards">
-    <div class="pc fade"><div class="pc-head">Research & Differentiation <span>01</span></div><div class="pc-tags"><span>Competitive analysis</span><span>User pain points</span><span>Differentiation</span></div></div>
-    <div class="pc fill fade d1"><div class="pc-head">UI / UX Design <span>02</span></div><div class="pc-tags"><span>User flows</span><span>Wireframes</span><span>Hi-fi</span></div></div>
-    <div class="pc fade d1"><div class="pc-head">Launch <span>03</span></div><div class="pc-tags"><span>Ship</span><span>Release</span><span>Rollout</span></div></div>
-    <div class="pc fill fade d2"><div class="pc-head">Instrumentation & Analysis <span>04</span></div><div class="pc-tags"><span>Event tracking</span><span>Funnels</span><span>A/B testing</span></div></div>
-    <div class="pc fade d2"><div class="pc-head">Iterate from Data <span>05</span></div><div class="pc-tags"><span>Prioritize</span><span>Optimize</span><span>Re-test</span></div></div>
+    <div class="pc fade"><div class="pc-head" data-zh="研究与差异化 &lt;span&gt;01&lt;/span&gt;">Research & Differentiation <span>01</span></div><div class="pc-tags" data-zh="&lt;span&gt;竞品分析&lt;/span&gt;&lt;span&gt;用户痛点&lt;/span&gt;&lt;span&gt;差异化&lt;/span&gt;"><span>Competitive analysis</span><span>User pain points</span><span>Differentiation</span></div></div>
+    <div class="pc fill fade d1"><div class="pc-head" data-zh="UI / UX 设计 &lt;span&gt;02&lt;/span&gt;">UI / UX Design <span>02</span></div><div class="pc-tags" data-zh="&lt;span&gt;用户流程&lt;/span&gt;&lt;span&gt;线框图&lt;/span&gt;&lt;span&gt;高保真&lt;/span&gt;"><span>User flows</span><span>Wireframes</span><span>Hi-fi</span></div></div>
+    <div class="pc fade d1"><div class="pc-head" data-zh="上线 &lt;span&gt;03&lt;/span&gt;">Launch <span>03</span></div><div class="pc-tags" data-zh="&lt;span&gt;交付&lt;/span&gt;&lt;span&gt;发布&lt;/span&gt;&lt;span&gt;灰度铺开&lt;/span&gt;"><span>Ship</span><span>Release</span><span>Rollout</span></div></div>
+    <div class="pc fill fade d2"><div class="pc-head" data-zh="埋点与分析 &lt;span&gt;04&lt;/span&gt;">Instrumentation & Analysis <span>04</span></div><div class="pc-tags" data-zh="&lt;span&gt;事件埋点&lt;/span&gt;&lt;span&gt;漏斗分析&lt;/span&gt;&lt;span&gt;A/B 测试&lt;/span&gt;"><span>Event tracking</span><span>Funnels</span><span>A/B testing</span></div></div>
+    <div class="pc fade d2"><div class="pc-head" data-zh="数据驱动迭代 &lt;span&gt;05&lt;/span&gt;">Iterate from Data <span>05</span></div><div class="pc-tags" data-zh="&lt;span&gt;排定优先级&lt;/span&gt;&lt;span&gt;优化&lt;/span&gt;&lt;span&gt;再验证&lt;/span&gt;"><span>Prioritize</span><span>Optimize</span><span>Re-test</span></div></div>
   </div>
 </section>
 
@@ -1505,10 +1517,10 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
 
 <!-- IA -->
 <section class="wrap pad-y" data-label="ia">
-  <span class="eyebrow fade">Information Architecture</span>
+  <span class="eyebrow fade" data-zh="信息架构">Information Architecture</span>
   <div class="two" style="margin-top:40px">
-    <div class="t fade"><p class="case-lead">Five core tabs,<br><em>one conversion spine</em></p></div>
-    <div class="fade d1"><p class="lead">Discover → Create → Relationship → Monetize, with Create emphasized at the center; any interaction can lead to top-up and subscription. The three bets sit on the key nodes of this spine.</p></div>
+    <div class="t fade"><p class="case-lead" data-zh="五个核心标签，&lt;br&gt;&lt;em&gt;一条转化主线&lt;/em&gt;">Five core tabs,<br><em>one conversion spine</em></p></div>
+    <div class="fade d1"><p class="lead" data-zh="Discover → Create → Relationship → Monetize（发现 → 创造 → 关系 → 变现），以 Create 为中心；任何一次互动都可能导向充值与订阅。三个赌注正落在这条主线的关键节点上。">Discover → Create → Relationship → Monetize, with Create emphasized at the center; any interaction can lead to top-up and subscription. The three bets sit on the key nodes of this spine.</p></div>
   </div>
   <div class="ia-shot dualfull fade" style="margin-top:clamp(40px,6vw,70px)">
     <div class="frame"><img src="assets/one conversion spine.webp" loading="lazy" onerror="this.remove()" alt="Information architecture — five tabs, one conversion spine"><div class="ph-slot"><div class="inner"><div class="no">★</div><div class="t">IA / sitemap (full image)</div><div class="meta">shown at its own ratio</div><span class="fname">one conversion spine.webp</span></div></div></div>
@@ -1519,36 +1531,36 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
 <!-- ===== BET A ===== -->
 <section class="bet wrap bet-research" data-label="bet-a">
   <div class="rh-row">
-    <span class="pill-eyebrow fade"><span class="d"></span>Bet 01 · Create</span>
-    <span class="pill-eyebrow fade d1"><span class="d"></span>Key Insights</span>
+    <span class="pill-eyebrow fade" data-zh="&lt;span class=&quot;d&quot;&gt;&lt;/span&gt;赌注 01 · 创造"><span class="d"></span>Bet 01 · Create</span>
+    <span class="pill-eyebrow fade d1" data-zh="&lt;span class=&quot;d&quot;&gt;&lt;/span&gt;关键洞察"><span class="d"></span>Key Insights</span>
   </div>
   <div class="research">
     <div class="r-left fade">
-      <h3 class="r-h">Where exactly do<br>users get stuck?</h3>
-      <p class="r-p">Instrumented every step of the creation funnel to pinpoint where users drop off: the preference-tags step alone loses 10%, only 50% reach the paywall, and just 10% complete payment.</p>
+      <h3 class="r-h" data-zh="用户到底卡在&lt;br&gt;哪一步？">Where exactly do<br>users get stuck?</h3>
+      <p class="r-p" data-zh="对创建漏斗的每一步做埋点，定位用户的流失点：仅偏好标签这一步就流失 10%，只有 50% 走到付费墙，最终仅 10% 完成付款。">Instrumented every step of the creation funnel to pinpoint where users drop off: the preference-tags step alone loses 10%, only 50% reach the paywall, and just 10% complete payment.</p>
       <div class="r-stats">
-        <div class="rs"><div class="v">48%</div><div class="l">Character creation conversion (funnel end)</div></div>
-        <div class="rs"><div class="v">4</div><div class="l">Customizable options — too few steps and tags to personalize</div></div>
-        <div class="rs"><div class="v">98%</div><div class="l">Creation completion rate (final)</div></div>
+        <div class="rs"><div class="v">48%</div><div class="l" data-zh="角色创建转化率（漏斗末端）">Character creation conversion (funnel end)</div></div>
+        <div class="rs"><div class="v">4</div><div class="l" data-zh="可定制项——可定制的步骤和标签太少">Customizable options — too few steps and tags to personalize</div></div>
+        <div class="rs"><div class="v">98%</div><div class="l" data-zh="创建完成率（最终）">Creation completion rate (final)</div></div>
       </div>
     </div>
     <div class="r-right fade d1">
       <div class="icards">
-        <div class="ic"><span class="ic-tag">Result preview</span><h4>No result preview before payment</h4><p>Users can&rsquo;t see the final result before paying, so there&rsquo;s no incentive to pay and ROI stays low.</p></div>
-        <div class="ic"><span class="ic-tag">Customization</span><h4>Too few options, and they&rsquo;re not intuitive</h4><p>Option images don&rsquo;t clearly convey what each choice means and lack appeal, so users don&rsquo;t want to pick.</p></div>
-        <div class="ic"><span class="ic-tag">Paywall</span><h4>The paywall copy is vague</h4><p>Users don&rsquo;t know what they&rsquo;ll actually get after paying.</p></div>
+        <div class="ic"><span class="ic-tag" data-zh="结果预览">Result preview</span><h4 data-zh="付款前缺少结果预览">No result preview before payment</h4><p data-zh="用户在付款前看不到最终效果，因此没有动力付款，ROI 也一直很低。">Users can&rsquo;t see the final result before paying, so there&rsquo;s no incentive to pay and ROI stays low.</p></div>
+        <div class="ic"><span class="ic-tag" data-zh="可定制项">Customization</span><h4 data-zh="可定制项太少，而且不够直观">Too few options, and they&rsquo;re not intuitive</h4><p data-zh="选项图无法直观传达每个选择的含义，也缺乏吸引力，用户因此不想选。">Option images don&rsquo;t clearly convey what each choice means and lack appeal, so users don&rsquo;t want to pick.</p></div>
+        <div class="ic"><span class="ic-tag" data-zh="Paywall">Paywall</span><h4 data-zh="Paywall 的文案太模糊">The paywall copy is vague</h4><p data-zh="用户不知道付款之后到底能得到什么。">Users don&rsquo;t know what they&rsquo;ll actually get after paying.</p></div>
       </div>
     </div>
   </div>
   <div class="r-bottom fade d1">
-    <div class="methods"><span class="pill-eyebrow"><span class="d"></span>Methods</span><div class="m-tags"><span>Funnel analytics</span><span>User interviews</span><span>Usability testing</span><span>Competitive analysis</span></div></div>
-    <div class="keybar">The core hypothesis: bring the result preview <b>up front</b> so users see the final outcome early and build anticipation, and frame expectations with &ldquo;done in 30 seconds&rdquo; — easing creation anxiety and lifting completion.</div>
+    <div class="methods"><span class="pill-eyebrow" data-zh="&lt;span class=&quot;d&quot;&gt;&lt;/span&gt;研究方法"><span class="d"></span>Methods</span><div class="m-tags" data-zh="&lt;span&gt;漏斗分析&lt;/span&gt;&lt;span&gt;用户访谈&lt;/span&gt;&lt;span&gt;可用性测试&lt;/span&gt;&lt;span&gt;竞品分析&lt;/span&gt;"><span>Funnel analytics</span><span>User interviews</span><span>Usability testing</span><span>Competitive analysis</span></div></div>
+    <div class="keybar" data-zh="核心假设：把结果预览&lt;b&gt;提前展示&lt;/b&gt;，让用户尽早看到最终效果、建立期待，并用&amp;ldquo;30 秒完成&amp;rdquo;设定预期——缓解创建焦虑、提升完成率。">The core hypothesis: bring the result preview <b>up front</b> so users see the final outcome early and build anticipation, and frame expectations with &ldquo;done in 30 seconds&rdquo; — easing creation anxiety and lifting completion.</div>
   </div>
 </section>
 
 <!-- 赌注A · 方案与验证(独立区块) -->
 <section class="bet wrap" data-label="bet-a-solution">
-  <div class="bethead"><div><span class="pill-eyebrow" style="margin-bottom:14px"><span class="d"></span>Bet 01 · Create</span><h2 class="lmask"><span>Create my AI character</span></h2></div></div>
+  <div class="bethead"><div><span class="pill-eyebrow" style="margin-bottom:14px" data-zh="&lt;span class=&quot;d&quot;&gt;&lt;/span&gt;赌注 01 · 创造"><span class="d"></span>Bet 01 · Create</span><h2 class="lmask" data-zh="&lt;span&gt;创建我的 AI 角色&lt;/span&gt;"><span>Create my AI character</span></h2></div></div>
   <!-- 方案 · 三屏:中间手机样机 + 左右浮动卡片(黑底,图片后续提供) -->
   <div class="phonecomp fade">
     <div class="pc-card left"><div class="frame"><img src="assets/momoso-create-01-left.webp" loading="lazy" decoding="async" onerror="this.remove()" alt="Momoso Create flow — choose face"><div class="ph-slot"><div class="inner"><div class="t">Style</div><span class="fname">momoso-create-01-left.webp</span></div></div></div></div>
@@ -1567,27 +1579,27 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
   </div>
   <div class="two" style="margin-top:clamp(50px,8vw,100px)">
     <div class="t fade">
-      <p class="subhead">Validation · did the data improve</p>
+      <p class="subhead" data-zh="验证 · 数据是否变好">Validation · did the data improve</p>
       <div class="ab">
-        <div class="card ctrl"><div class="tag">Before</div><div class="pct">48%</div><div class="sub">Character creation conversion</div></div>
-        <div class="card exp"><div class="tag">After</div><div class="pct">63%</div><div class="sub">Character creation conversion</div></div>
+        <div class="card ctrl"><div class="tag" data-zh="调整前">Before</div><div class="pct">48%</div><div class="sub" data-zh="角色创建转化率">Character creation conversion</div></div>
+        <div class="card exp"><div class="tag" data-zh="调整后">After</div><div class="pct">63%</div><div class="sub" data-zh="角色创建转化率">Character creation conversion</div></div>
       </div>
       
     </div>
     <div class="fade d1"><div class="deltas" style="grid-template-columns:1fr;gap:16px">
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Creation completion rate</span><span class="v">80%→98%</span></div>
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Avg. creation time</span><span class="v">15s→54s</span></div>
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">D0 first purchase</span><span class="v">$5→$20</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)" data-zh="创建完成率">Creation completion rate</span><span class="v">80%→98%</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)" data-zh="平均创建时间">Avg. creation time</span><span class="v">15s→54s</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)" data-zh="D0 首充">D0 first purchase</span><span class="v">$5→$20</span></div>
     </div></div>
   </div>
 </section>
 
 <!-- ===== BET B ===== -->
 <section class="bet wrap" data-label="bet-b">
-  <div class="bethead"><div><span class="pill-eyebrow" style="margin-bottom:14px"><span class="d"></span>Bet 02 · Customization</span><h2 class="lmask"><span>Put generation<br>in the <em>user&rsquo;s hands</em></span></h2></div></div>
+  <div class="bethead"><div><span class="pill-eyebrow" style="margin-bottom:14px" data-zh="&lt;span class=&quot;d&quot;&gt;&lt;/span&gt;赌注 02 · 定制"><span class="d"></span>Bet 02 · Customization</span><h2 class="lmask" data-zh="&lt;span&gt;把生成的主动权&lt;br&gt;交到&lt;em&gt;用户手里&lt;/em&gt;&lt;/span&gt;"><span>Put generation<br>in the <em>user&rsquo;s hands</em></span></h2></div></div>
   <div class="two rev" style="margin-top:clamp(50px,8vw,100px)">
-    <div class="t fade"><p class="subhead">Problem</p><p class="lead">Interaction content was preset and one-size-fits-all — users could only receive it passively and never got the scenes or storylines they actually wanted. Novelty wore off fast, engagement stayed shallow, and there was little reason to pay.</p></div>
-    <div class="fade d1"><p class="subhead">Insight + Hypothesis</p><div class="quote">In chat, users can pick a preset action or type their own DIY prompt, and the character generates bespoke content — images, video, live action — in real time. By making controllability the highlight, users no longer passively receive content; they direct every generation, and that sense of control deepens immersion and drives both sustained engagement and first purchase.</div></div>
+    <div class="t fade"><p class="subhead" data-zh="问题">Problem</p><p class="lead" data-zh="互动内容是预设的、千篇一律——用户只能被动接收，得不到自己真正想要的场景或剧情。新鲜感很快消退，参与停留在表层，也几乎没有付费的理由。">Interaction content was preset and one-size-fits-all — users could only receive it passively and never got the scenes or storylines they actually wanted. Novelty wore off fast, engagement stayed shallow, and there was little reason to pay.</p></div>
+    <div class="fade d1"><p class="subhead" data-zh="洞察 + 假设">Insight + Hypothesis</p><div class="quote" data-zh="在对话中，用户既可以选预设动作，也可以输入自己的 DIY 指令，角色便实时生成专属内容——图片、视频、Live Action。把可控性做成体验高光后，用户不再被动接收，而是主导每一次生成；这种掌控感加深了沉浸，也同时拉动了持续参与与首次付费。">In chat, users can pick a preset action or type their own DIY prompt, and the character generates bespoke content — images, video, live action — in real time. By making controllability the highlight, users no longer passively receive content; they direct every generation, and that sense of control deepens immersion and drives both sustained engagement and first purchase.</div></div>
   </div>
   <!-- 左图片 / 右动效面板(整幅出血,撑满屏宽) -->
   <div class="dualfull" style="margin-top:clamp(50px,8vw,100px)">
@@ -1609,32 +1621,32 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         </div>
       </div>
       <div class="dp-anim fade d1">
-        <span class="dp-pill">Real-time · Live Action</span>
+        <span class="dp-pill" data-zh="实时 · Live Action">Real-time · Live Action</span>
         <div class="dp-stage">
           <video class="dp-video" autoplay loop muted playsinline><source src="assets/shared/loading-loop.webm" type="video/webm"></video>
         </div>
         <div class="dp-input"><span class="tx"></span><span class="caret"></span></div>
-        <h3 class="dp-h">Generating live&hellip;</h3>
-        <p class="dp-sub">Pick a preset action or type a DIY prompt, and the character generates bespoke content in real time — turning controllability into the experience highlight.</p>
+        <h3 class="dp-h" data-zh="实时生成中…">Generating live&hellip;</h3>
+        <p class="dp-sub" data-zh="选一个预设动作，或输入 DIY 指令，角色即可实时生成专属内容——把可控性变成体验的高光。">Pick a preset action or type a DIY prompt, and the character generates bespoke content in real time — turning controllability into the experience highlight.</p>
       </div>
     </div>
   </div>
   <div class="fade" style="margin-top:clamp(50px,8vw,100px)">
-    <p class="subhead">Validation · did the data improve</p>
+    <p class="subhead" data-zh="验证 · 数据是否变好">Validation · did the data improve</p>
     <div class="deltas">
-      <div class="delta"><div class="v"><span class="b4">19%→</span>26%</div><div class="l">D7 retention (+36%)</div></div>
-      <div class="delta"><div class="v"><span class="b4">6→</span>11</div><div class="l">Meaningful turns per user</div></div>
-      <div class="delta"><div class="v">$35</div><div class="l">D0 first purchase · ARPPU</div></div>
+      <div class="delta"><div class="v"><span class="b4">19%→</span>26%</div><div class="l" data-zh="D7 留存（+36%）">D7 retention (+36%)</div></div>
+      <div class="delta"><div class="v"><span class="b4">6→</span>11</div><div class="l" data-zh="人均有效对话轮次">Meaningful turns per user</div></div>
+      <div class="delta"><div class="v">$35</div><div class="l" data-zh="D0 首充 · ARPPU">D0 first purchase · ARPPU</div></div>
     </div>
   </div>
 </section>
 
 <!-- ===== BET C ===== -->
 <section class="bet wrap" data-label="bet-c">
-  <div class="bethead"><div><span class="pill-eyebrow" style="margin-bottom:14px"><span class="d"></span>Bet 03 · Monetize</span><h2 class="lmask"><span>Monetization funnel &<br><em>the right moment to pay</em></span></h2></div></div>
+  <div class="bethead"><div><span class="pill-eyebrow" style="margin-bottom:14px" data-zh="&lt;span class=&quot;d&quot;&gt;&lt;/span&gt;赌注 03 · 变现"><span class="d"></span>Bet 03 · Monetize</span><h2 class="lmask" data-zh="&lt;span&gt;变现漏斗与&lt;br&gt;&lt;em&gt;恰到好处的付费时机&lt;/em&gt;&lt;/span&gt;"><span>Monetization funnel &<br><em>the right moment to pay</em></span></h2></div></div>
   <div class="two" style="margin-top:clamp(50px,8vw,100px)">
-    <div class="t fade"><p class="subhead">Problem</p><p class="lead">A single hard paywall converted only 3.1%, interrupting the experience and causing churn. The moments of strongest intent went uncaptured.</p></div>
-    <div class="fade d1"><p class="subhead">Insight + Hypothesis</p><div class="quote">Trigger payment contextually at high-intent moments (in-call actions, private unlocks), and use tier-skip purchases to capture the impulse.</div></div>
+    <div class="t fade"><p class="subhead" data-zh="问题">Problem</p><p class="lead" data-zh="单一的硬付费墙转化率只有 3.1%，还打断体验、造成流失，意图最强的那些时刻反而没被抓住。">A single hard paywall converted only 3.1%, interrupting the experience and causing churn. The moments of strongest intent went uncaptured.</p></div>
+    <div class="fade d1"><p class="subhead" data-zh="洞察 + 假设">Insight + Hypothesis</p><div class="quote" data-zh="在高意图时刻按场景触发付费（通话中的动作、私密解锁），并用越级购买抓住用户的冲动。">Trigger payment contextually at high-intent moments (in-call actions, private unlocks), and use tier-skip purchases to capture the impulse.</div></div>
   </div>
   <div class="bleed" style="padding:0;margin-top:clamp(50px,8vw,100px)">
     <div class="screens">
@@ -1649,7 +1661,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
           <span class="tp-cur tp-c3"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
         </div>
       </div>
-        <div class="pay-cap"><b>Top-up at the right moment</b><p>Insufficient balance &rarr; discounted recharge, right when intent peaks.</p></div>
+        <div class="pay-cap"><b data-zh="在恰当时机充值">Top-up at the right moment</b><p data-zh="余额不足 → 在意图峰值时给出折扣充值。">Insufficient balance &rarr; discounted recharge, right when intent peaks.</p></div>
       </div>
       <div class="pay-cell fade d1"><div class="frame" style="aspect-ratio:9/19.5">
         <div class="gi-screen t2-demo" role="img" aria-label="Coin unlock flow: open the action panel, tap a higher-level gift, skip levels with coins, unlock and play">
@@ -1683,7 +1695,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
           <div class="t2-spin"><video muted loop autoplay playsinline preload="metadata"><source src="assets/shared/loading-loop.webm" type="video/webm"></video></div>
         </div>
       </div>
-        <div class="pay-cap"><b>Tier-skip unlock</b><p>Pay coins to skip levels and unlock the action instantly.</p></div>
+        <div class="pay-cap"><b data-zh="越级解锁">Tier-skip unlock</b><p data-zh="用金币跳过等级，瞬间解锁该动作。">Pay coins to skip levels and unlock the action instantly.</p></div>
       </div>
       <div class="pay-cell fade d2"><div class="frame" style="aspect-ratio:9/19.5">
         <div class="gi-screen gi-demo t3-demo" role="img" aria-label="Feed scrolling demo: swipe five videos, a paywall appears, Start Creating leads to character creation">
@@ -1701,47 +1713,47 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
           <img class="cc" src="assets/the right moment to pay/03/create-choose.webp" alt="" loading="lazy">
         </div>
       </div>
-        <div class="pay-cap"><b>Feed paywall &rarr; creation</b><p>A few free videos, then a contextual paywall into Create.</p></div>
+        <div class="pay-cap"><b data-zh="信息流付费墙 → 创建">Feed paywall &rarr; creation</b><p data-zh="先看几条免费视频，再用场景化付费墙引导进入创建。">A few free videos, then a contextual paywall into Create.</p></div>
       </div>
     </div>
   </div>
   <div class="two" style="margin-top:clamp(50px,8vw,100px)">
     <div class="t fade">
-      <p class="subhead">Validation · did the data improve</p>
+      <p class="subhead" data-zh="验证 · 数据是否变好">Validation · did the data improve</p>
       <div class="ab">
-        <div class="card ctrl"><div class="tag">Hard paywall</div><div class="pct">3.1%</div><div class="sub">Paid conversion</div></div>
-        <div class="card exp"><div class="tag">Contextual</div><div class="pct">6.8%</div><div class="sub">Paid conversion</div></div>
+        <div class="card ctrl"><div class="tag" data-zh="硬付费墙">Hard paywall</div><div class="pct">3.1%</div><div class="sub" data-zh="付费转化">Paid conversion</div></div>
+        <div class="card exp"><div class="tag" data-zh="场景化">Contextual</div><div class="pct">6.8%</div><div class="sub" data-zh="付费转化">Paid conversion</div></div>
       </div>
       
     </div>
     <div class="fade d1"><div class="deltas" style="grid-template-columns:1fr;gap:16px">
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">Paid conversion rate</span><span class="v">3.1%→6.8%</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)" data-zh="付费转化率">Paid conversion rate</span><span class="v">3.1%→6.8%</span></div>
       <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">ARPU</span><span class="v">$10→$25</span></div>
-      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)">7-day repurchase</span><span class="v">+35%</span></div>
+      <div class="delta" style="display:flex;justify-content:space-between;align-items:center;text-align:left"><span class="l" style="margin:0;color:var(--ink-60)" data-zh="7 日复购">7-day repurchase</span><span class="v">+35%</span></div>
     </div></div>
   </div>
 </section>
 
 <!-- 用户驱动 · 倾听用户声音 → 快速响应(复用 bet-research 布局) -->
 <section class="wrap pad-y pv" data-label="user-driven">
-  <span class="pill-eyebrow center fade"><span class="d"></span>User Pain Point</span>
-  <h2 class="pv-h fade">One piece of feedback, <em>one iteration</em>.</h2>
+  <span class="pill-eyebrow center fade" data-zh="&lt;span class=&quot;d&quot;&gt;&lt;/span&gt;用户痛点"><span class="d"></span>User Pain Point</span>
+  <h2 class="pv-h fade" data-zh="一条反馈，&lt;em&gt;一次迭代&lt;/em&gt;。">One piece of feedback, <em>one iteration</em>.</h2>
   <div class="pv-stats fade d1">
-    <div class="pv-st"><div class="v">24h</div><div class="l">Avg. turnaround on<br>high-frequency feedback</div></div>
-    <div class="pv-st"><div class="v">+18%</div><div class="l">Next-day retention after<br>onboarding shipped</div></div>
+    <div class="pv-st"><div class="v">24h</div><div class="l" data-zh="高频反馈的&lt;br&gt;平均响应时长">Avg. turnaround on<br>high-frequency feedback</div></div>
+    <div class="pv-st"><div class="v">+18%</div><div class="l" data-zh="上线引导后的&lt;br&gt;次日留存">Next-day retention after<br>onboarding shipped</div></div>
   </div>
   <div class="pv-card fade d1">
-    <div class="pv-left"><span class="pv-lbl">Problem</span><p class="pv-state">Users &ldquo;don&rsquo;t know what to do after creating&rdquo; —<br>what&rsquo;s missing isn&rsquo;t features, it&rsquo;s <b>guidance for the first step</b>.</p></div>
+    <div class="pv-left"><span class="pv-lbl" data-zh="问题">Problem</span><p class="pv-state" data-zh="用户&amp;ldquo;创建完不知道该做什么&amp;rdquo;——&lt;br&gt;缺的不是功能，而是&lt;b&gt;第一步的引导&lt;/b&gt;。">Users &ldquo;don&rsquo;t know what to do after creating&rdquo; —<br>what&rsquo;s missing isn&rsquo;t features, it&rsquo;s <b>guidance for the first step</b>.</p></div>
     <div class="pv-right">
-      <div class="pv-row"><span class="no">01</span><p>After creating an AI character, no idea what to do next.</p></div>
-      <div class="pv-row"><span class="no">02</span><p>How real-time generation works isn&rsquo;t obvious the first time.</p></div>
-      <div class="pv-row"><span class="no">03</span><p>Unlock / top-up entries are buried — hard to find when needed.</p></div>
+      <div class="pv-row"><span class="no">01</span><p data-zh="创建完 AI 角色后，不知道下一步要做什么。">After creating an AI character, no idea what to do next.</p></div>
+      <div class="pv-row"><span class="no">02</span><p data-zh="第一次用，搞不清实时生成是怎么运作的。">How real-time generation works isn&rsquo;t obvious the first time.</p></div>
+      <div class="pv-row"><span class="no">03</span><p data-zh="解锁 / 充值入口藏得太深，需要时很难找到。">Unlock / top-up entries are buried — hard to find when needed.</p></div>
     </div>
   </div>
   <div class="pv-hmw fade d1">
-    <span class="pill-eyebrow center"><span class="d"></span>What we did</span>
-    <h2 class="pv-q">How might users <em>know what to do</em><br>right after they create?</h2>
-    <span class="pv-answer">Answer: ship a first-run onboarding</span>
+    <span class="pill-eyebrow center" data-zh="&lt;span class=&quot;d&quot;&gt;&lt;/span&gt;我们做了什么"><span class="d"></span>What we did</span>
+    <h2 class="pv-q" data-zh="用户怎样才能在创建完之后&lt;br&gt;&lt;em&gt;立刻知道该做什么&lt;/em&gt;？">How might users <em>know what to do</em><br>right after they create?</h2>
+    <span class="pv-answer" data-zh="答案：上线一套首轮引导">Answer: ship a first-run onboarding</span>
   </div>
   <div class="rs-ticker dualfull fade d1">
     <div class="rs-track">
@@ -1759,7 +1771,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <span class="ob-cur o1c3"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
         <span class="ob-cur o1c4"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Story-book opener</div><div class="rs-c">Typed intro · language pick · first two tooltips</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;故事书开场&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;打字开场 · 选择语言 · 前两个提示&lt;/div&gt;"><div class="rs-t">Story-book opener</div><div class="rs-c">Typed intro · language pick · first two tooltips</div></div></div>
       <div class="rs-card"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob2" role="img" aria-label="Voice call onboarding: hold to talk, the transcript streams in, then the action panel with live states">
         <img class="scr s1" src="assets/First round onboarding/02/ob2-call.webp" alt="" loading="lazy">
@@ -1771,7 +1783,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <div class="o2-dg o2-d1">23</div><div class="o2-dg o2-d2">59</div><div class="o2-dg o2-d3">59</div>
         <span class="ob-cur o2c1"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Voice-first call</div><div class="rs-c">Hold to talk · live transcript · instant reply</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;语音优先通话&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;按住说话 · 实时转写 · 即时回复&lt;/div&gt;"><div class="rs-t">Voice-first call</div><div class="rs-c">Hold to talk · live transcript · instant reply</div></div></div>
       <div class="rs-card"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob3" role="img" aria-label="Live Action first-run: loading, menu tooltip, action list walkthrough, then chat tip">
         <img class="scr b1" src="assets/First round onboarding/03/ob3-g1.webp" alt="" loading="lazy">
@@ -1787,7 +1799,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <span class="ob-cur o3c2"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
         <span class="ob-cur o3c3"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Live Action walkthrough</div><div class="rs-c">Menu → first action → chat, carried by tooltips</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;Live Action 引导&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;菜单 → 第一个动作 → 对话，全程提示&lt;/div&gt;"><div class="rs-t">Live Action walkthrough</div><div class="rs-c">Menu → first action → chat, carried by tooltips</div></div></div>
       <div class="rs-card"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob4" role="img" aria-label="Affection rewards: tap the level widget, the rewards sheet rises and the EX bar fills">
         <img class="scr s1" src="assets/First round onboarding/04/ob4-live.webp" alt="" loading="lazy">
@@ -1798,7 +1810,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         </div>
         <span class="ob-cur o4c1"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Progress made visible</div><div class="rs-c">Tap the level widget · see how EX is earned</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;让进度可见&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;点开等级组件 · 看 EX 如何赚取&lt;/div&gt;"><div class="rs-t">Progress made visible</div><div class="rs-c">Tap the level widget · see how EX is earned</div></div></div>
       <div class="rs-card"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob5" role="img" aria-label="DIY action pipeline: type a prompt, generate to 100 percent, the action becomes Your DIY and plays">
         <img class="scr s1" src="assets/First round onboarding/05/ob5-gen.webp" alt="" loading="lazy">
@@ -1811,7 +1823,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <span class="ob-cur o5c1"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
         <span class="ob-cur o5c2"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Prompt to owned action</div><div class="rs-c">Type it · generate to 100% · play it</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;一句话生成专属动作&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;输入 → 生成到 100% → 播放&lt;/div&gt;"><div class="rs-t">Prompt to owned action</div><div class="rs-c">Type it · generate to 100% · play it</div></div></div>
       <div class="rs-card" aria-hidden="true"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob1" role="img" aria-label="First-call onboarding: story-book intro typed out, countdown, language pick, then two in-call tooltips">
         <img class="scr s1" src="assets/First round onboarding/01/ob1-story-clean.webp" alt="" loading="lazy">
@@ -1826,7 +1838,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <span class="ob-cur o1c3"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
         <span class="ob-cur o1c4"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Story-book opener</div><div class="rs-c">Typed intro · language pick · first two tooltips</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;故事书开场&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;打字开场 · 选择语言 · 前两个提示&lt;/div&gt;"><div class="rs-t">Story-book opener</div><div class="rs-c">Typed intro · language pick · first two tooltips</div></div></div>
       <div class="rs-card" aria-hidden="true"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob2" role="img" aria-label="Voice call onboarding: hold to talk, the transcript streams in, then the action panel with live states">
         <img class="scr s1" src="assets/First round onboarding/02/ob2-call.webp" alt="" loading="lazy">
@@ -1838,7 +1850,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <div class="o2-dg o2-d1">23</div><div class="o2-dg o2-d2">59</div><div class="o2-dg o2-d3">59</div>
         <span class="ob-cur o2c1"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Voice-first call</div><div class="rs-c">Hold to talk · live transcript · instant reply</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;语音优先通话&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;按住说话 · 实时转写 · 即时回复&lt;/div&gt;"><div class="rs-t">Voice-first call</div><div class="rs-c">Hold to talk · live transcript · instant reply</div></div></div>
       <div class="rs-card" aria-hidden="true"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob3" role="img" aria-label="Live Action first-run: loading, menu tooltip, action list walkthrough, then chat tip">
         <img class="scr b1" src="assets/First round onboarding/03/ob3-g1.webp" alt="" loading="lazy">
@@ -1854,7 +1866,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <span class="ob-cur o3c2"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
         <span class="ob-cur o3c3"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Live Action walkthrough</div><div class="rs-c">Menu → first action → chat, carried by tooltips</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;Live Action 引导&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;菜单 → 第一个动作 → 对话，全程提示&lt;/div&gt;"><div class="rs-t">Live Action walkthrough</div><div class="rs-c">Menu → first action → chat, carried by tooltips</div></div></div>
       <div class="rs-card" aria-hidden="true"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob4" role="img" aria-label="Affection rewards: tap the level widget, the rewards sheet rises and the EX bar fills">
         <img class="scr s1" src="assets/First round onboarding/04/ob4-live.webp" alt="" loading="lazy">
@@ -1865,7 +1877,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         </div>
         <span class="ob-cur o4c1"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Progress made visible</div><div class="rs-c">Tap the level widget · see how EX is earned</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;让进度可见&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;点开等级组件 · 看 EX 如何赚取&lt;/div&gt;"><div class="rs-t">Progress made visible</div><div class="rs-c">Tap the level widget · see how EX is earned</div></div></div>
       <div class="rs-card" aria-hidden="true"><div class="rs-vis rsv-demo"><div class="ob-fit">
 <div class="gi-screen ob-demo ob5" role="img" aria-label="DIY action pipeline: type a prompt, generate to 100 percent, the action becomes Your DIY and plays">
         <img class="scr s1" src="assets/First round onboarding/05/ob5-gen.webp" alt="" loading="lazy">
@@ -1878,7 +1890,7 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
         <span class="ob-cur o5c1"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
         <span class="ob-cur o5c2"><img src="assets/guide_cursor/guide_cursor.webp" alt="" loading="lazy"></span>
       </div>
-</div></div><div class="rs-meta"><div class="rs-t">Prompt to owned action</div><div class="rs-c">Type it · generate to 100% · play it</div></div></div>
+</div></div><div class="rs-meta" data-zh="&lt;div class=&quot;rs-t&quot;&gt;一句话生成专属动作&lt;/div&gt;&lt;div class=&quot;rs-c&quot;&gt;输入 → 生成到 100% → 播放&lt;/div&gt;"><div class="rs-t">Prompt to owned action</div><div class="rs-c">Type it · generate to 100% · play it</div></div></div>
     </div>
   </div>
 </section>
@@ -1912,37 +1924,37 @@ img.gi-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;bord
 
 <!-- outcomes -->
 <section class="wrap pad-y" data-label="outcomes">
-  <span class="eyebrow fade">Mechanics → Results</span>
-  <div class="lmask" style="margin-top:20px"><span class="allcaps" style="font-size:clamp(30px,5vw,64px)">Three bets,<br>validated results</span></div>
-  <p class="lead fade d1" style="margin-top:24px;max-width:56ch">Every bet was validated against instrumentation, not opinion: did it actually lift ROI and top-ups? When the data said no, I switched strategy and kept iterating until the numbers genuinely moved. Here&rsquo;s what I&rsquo;d carry forward.</p>
+  <span class="eyebrow fade" data-zh="机制 → 结果">Mechanics → Results</span>
+  <div class="lmask" style="margin-top:20px"><span class="allcaps" style="font-size:clamp(30px,5vw,64px)" data-zh="三个赌注，&lt;br&gt;都被数据验证">Three bets,<br>validated results</span></div>
+  <p class="lead fade d1" style="margin-top:24px;max-width:56ch" data-zh="每个赌注都拿埋点数据来验证，而非凭主观：它到底有没有提升 ROI 与充值？数据说没有，我就换策略、持续迭代，直到数字真正动起来。以下是我会带走的经验。">Every bet was validated against instrumentation, not opinion: did it actually lift ROI and top-ups? When the data said no, I switched strategy and kept iterating until the numbers genuinely moved. Here&rsquo;s what I&rsquo;d carry forward.</p>
   <div class="two" style="margin-top:clamp(48px,7vw,86px)">
-    <div class="t fade"><p class="subhead">Reflection</p><p class="lead">I treated every bet as a hypothesis to be proven by data, not shipped on conviction. Each one was instrumented to ask a single question — did it actually lift ROI and top-ups? When the numbers didn&rsquo;t move, I dropped the idea and tried another angle, iterating until the data showed a real gain. That validate-or-switch loop is what I&rsquo;d carry into the next product.</p></div>
-    <div class="fade d1"><p class="subhead">My contribution</p><p class="lead">As the designer on these bets, my job was to turn each problem into a UI/UX solution that moved the numbers. I led the solution for every bet, read the funnels and ran the reviews to decide what to keep or swap, designed the right UI/UX for each fix, and kept iterating until the data showed a genuine lift in conversion, ARPU and top-ups.</p></div>
+    <div class="t fade"><p class="subhead" data-zh="复盘">Reflection</p><p class="lead" data-zh="我把每个赌注都当作一个需要用数据证明的假设，而不是凭信念就上线。每一个都做了埋点，只问一个问题——它真的提升了 ROI 与充值吗？数字没动，我就放弃这个想法、换个角度，一直迭代到数据出现真实增长。这套&amp;ldquo;验证或换策略&amp;rdquo;的循环，正是我会带进下一个产品的东西。">I treated every bet as a hypothesis to be proven by data, not shipped on conviction. Each one was instrumented to ask a single question — did it actually lift ROI and top-ups? When the numbers didn&rsquo;t move, I dropped the idea and tried another angle, iterating until the data showed a real gain. That validate-or-switch loop is what I&rsquo;d carry into the next product.</p></div>
+    <div class="fade d1"><p class="subhead" data-zh="我的贡献">My contribution</p><p class="lead" data-zh="作为这些赌注的设计师，我的职责是把每个问题转化为能撬动数据的 UI/UX 方案。我主导每个赌注的解决方案，读漏斗、做评审来决定保留还是替换，为每个改动设计合适的 UI/UX，并持续迭代，直到数据在转化率、ARPU 与充值上出现真实提升。">As the designer on these bets, my job was to turn each problem into a UI/UX solution that moved the numbers. I led the solution for every bet, read the funnels and ran the reviews to decide what to keep or swap, designed the right UI/UX for each fix, and kept iterating until the data showed a genuine lift in conversion, ARPU and top-ups.</p></div>
   </div>
 </section>
 
 <!-- SKILLS · 钉住滚动手风琴 + 右侧大图切换(仿 framer feature 交互) -->
 <section id="skills" class="skills-feat" data-label="skills">
   <div class="wrap">
-    <span class="eyebrow fade">Capabilities</span>
-    <h2 class="sf-head fade">Design, validate, <em>ship</em></h2>
+    <span class="eyebrow fade" data-zh="能力">Capabilities</span>
+    <h2 class="sf-head fade" data-zh="设计、验证、&lt;em&gt;交付&lt;/em&gt;">Design, validate, <em>ship</em></h2>
   </div>
   <div class="sf-pin">
     <div class="sf-stage">
       <div class="wrap sf-grid">
         <div class="sf-list">
-          <div class="sf-item active" data-i="0"><h3 class="sf-t">Product Strategy</h3><div class="sf-desc"><div><p>Break vague briefs into <b>testable hypotheses</b> and make reasoned trade-offs under constraints — deciding what to build and what not to.</p></div></div></div>
-          <div class="sf-item" data-i="1"><h3 class="sf-t">Systems Design</h3><div class="sf-desc"><div><p>Design interlocking systems: <b>progression levels, dual currencies, creator subscriptions</b> — connecting the retention × monetization loop.</p></div></div></div>
-          <div class="sf-item" data-i="2"><h3 class="sf-t">Interaction Design</h3><div class="sf-desc"><div><p>Tame <b>high-complexity flows</b>: the creation funnel, real-time calls, 80+ screens of navigation — mobile-first, with predictable states.</p></div></div></div>
-          <div class="sf-item" data-i="3"><h3 class="sf-t">Growth & Monetization</h3><div class="sf-desc"><div><p>Trigger payment <b>contextually at high-intent moments</b>: paywalls, VIP tiers, tier-skip and save flows — balancing conversion and experience.</p></div></div></div>
-          <div class="sf-item" data-i="4"><h3 class="sf-t">Data Fluency</h3><div class="sf-desc"><div><p>Own <b>instrumentation</b> end to end and treat every decision as a hypothesis — reading the funnels to keep or switch strategy until the data genuinely moves: paid conversion <b>3.1%→6.8%</b>, ARPU <b>$10→$25</b>.</p></div></div></div>
+          <div class="sf-item active" data-i="0"><h3 class="sf-t" data-zh="研究与策略">Research &amp; Strategy</h3><div class="sf-desc"><div><p data-zh="研究市场与竞品、找到空位，再把它转化为产品方向——明确&lt;b&gt;定位、优先级，以及做什么背后的取舍&lt;/b&gt;。">Map the market and competitors to find the gap, then turn it into a product direction — defining <b>positioning, priorities and the trade-offs</b> behind what to build.</p></div></div></div>
+          <div class="sf-item" data-i="1"><h3 class="sf-t" data-zh="系统设计">Systems Design</h3><div class="sf-desc"><div><p data-zh="设计环环相扣的系统：&lt;b&gt;成长等级、双货币、创作者订阅&lt;/b&gt;——把留存 × 变现的闭环连起来。">Design interlocking systems: <b>progression levels, dual currencies, creator subscriptions</b> — connecting the retention × monetization loop.</p></div></div></div>
+          <div class="sf-item" data-i="2"><h3 class="sf-t" data-zh="交互设计">Interaction Design</h3><div class="sf-desc"><div><p data-zh="驾驭&lt;b&gt;高复杂度流程&lt;/b&gt;：创建漏斗、实时通话、80+ 屏导航——状态可预期、保持一致。">Tame <b>high-complexity flows</b>: the creation funnel, real-time calls, 80+ screens of navigation — with predictable, consistent states.</p></div></div></div>
+          <div class="sf-item" data-i="3"><h3 class="sf-t" data-zh="Paywall 设计">Paywall Design</h3><div class="sf-desc"><div><p data-zh="设计&lt;b&gt;因场景而异的 Paywall&lt;/b&gt;——针对每个高意图时刻定制报价与套餐，让付费提示更贴切、提升转化。">Design <b>scenario-specific paywalls</b> — tailoring the offer and packages to each high-intent moment so the prompt feels relevant and lifts conversion.</p></div></div></div>
+          <div class="sf-item" data-i="4"><h3 class="sf-t" data-zh="数据能力">Data Fluency</h3><div class="sf-desc"><div><p data-zh="端到端负责&lt;b&gt;埋点&lt;/b&gt;，把每个决策都当作假设——读漏斗、决定保留或换策略，直到数据真正改善：付费转化 &lt;b&gt;3.1%→6.8%&lt;/b&gt;，ARPU &lt;b&gt;$10→$25&lt;/b&gt;。">Own <b>instrumentation</b> end to end and treat every decision as a hypothesis — reading the funnels to keep or switch strategy until the data genuinely moves: paid conversion <b>3.1%→6.8%</b>, ARPU <b>$10→$25</b>.</p></div></div></div>
         </div>
         <div class="sf-visuals">
-          <div class="sf-vis active"><div class="frame"><img src="assets/skill-01.webp" loading="lazy" decoding="async" onerror="this.remove()" alt="Product strategy — For You discovery feed and product structure"><div class="ph-slot"><div class="inner"><div class="no">01</div><div class="t">Problem framing / trade-offs</div><span class="fname">skill-01.webp</span></div></div></div></div>
-          <div class="sf-vis"><div class="frame"><img src="assets/skill-02.webp" loading="lazy" decoding="async" onerror="this.remove()" alt="Systems design — Live Action menu, coins, EX and levels economy"><div class="ph-slot"><div class="inner"><div class="no">02</div><div class="t">System / currency economy</div><span class="fname">skill-02.webp</span></div></div></div></div>
-          <div class="sf-vis"><div class="frame"><img src="assets/skill-03.webp" loading="lazy" decoding="async" onerror="this.remove()" alt="Interaction design — character creation funnel"><div class="ph-slot"><div class="inner"><div class="no">03</div><div class="t">Flows / wireframes</div><span class="fname">skill-03.webp</span></div></div></div></div>
-          <div class="sf-vis"><div class="frame"><img src="assets/skill-04.webp" loading="lazy" decoding="async" onerror="this.remove()" alt="Growth and monetization — contextual paywall"><div class="ph-slot"><div class="inner"><div class="no">04</div><div class="t">Monetization funnel / paywall</div><span class="fname">skill-04.webp</span></div></div></div></div>
-          <div class="sf-vis"><div class="frame"><img src="assets/skill-05.webp" loading="lazy" decoding="async" onerror="this.remove()" alt="Data fluency — A/B test results on conversion"><div class="ph-slot"><div class="inner"><div class="no">05</div><div class="t">Experiments / dashboards</div><span class="fname">skill-05.webp</span></div></div></div></div>
+          <div class="sf-vis active"><div class="frame"><video src="assets/Capabilities/product-strategy.mp4" poster="assets/Capabilities/product-strategy-poster.webp" muted loop autoplay playsinline preload="metadata" aria-label="Product strategy — For You discovery feed and product structure"></video></div></div>
+          <div class="sf-vis"><div class="frame"><video src="assets/Capabilities/systems-design.mp4" poster="assets/Capabilities/systems-design-poster.webp" muted loop autoplay playsinline preload="metadata" aria-label="Systems design — Live Action menu, coins, EX and levels economy"></video></div></div>
+          <div class="sf-vis"><div class="frame"><video src="assets/Capabilities/interaction-design.mp4" poster="assets/Capabilities/interaction-design-poster.webp" muted loop autoplay playsinline preload="metadata" aria-label="Interaction design — character creation funnel"></video></div></div>
+          <div class="sf-vis"><div class="frame"><video src="assets/Capabilities/growth-monetization.mp4" poster="assets/Capabilities/growth-monetization-poster.webp" muted loop autoplay playsinline preload="metadata" aria-label="Growth and monetization — contextual paywall"></video></div></div>
+          <div class="sf-vis"><div class="frame"><video src="assets/Capabilities/data-fluency.mp4" poster="assets/Capabilities/data-fluency-poster.webp" muted loop autoplay playsinline preload="metadata" aria-label="Data fluency — conversion results"></video></div></div>
         </div>
       </div>
     </div>
@@ -1983,14 +1995,17 @@ addEventListener('load',fireHero);setTimeout(fireHero,120);
 const spread=document.querySelector('#hero .spread');
 addEventListener('scroll',()=>{if(spread)spread.style.transform='translateY('+(scrollY*0.12)+'px)';},{passive:true});
 
-/* 中 / EN 语言切换：暂时仅切换状态(body.zh + html lang)，等中文文案就位后接内容 */
+/* 中 / EN 语言切换：交换 [data-zh] 元素内容(首次缓存英文 innerHTML),并切 body.zh 字体 */
 (function(){
   const t=document.getElementById('langToggle'); if(!t)return;
   const en=t.querySelector('.lg-en'), zh=t.querySelector('.lg-zh');
+  const nodes=[...document.querySelectorAll('[data-zh]')];
+  nodes.forEach(n=>{ if(n.dataset.en===undefined) n.dataset.en=n.innerHTML; });
   function set(l){
     const isZh=l==='zh';
     document.body.classList.toggle('zh',isZh);
     document.documentElement.lang=isZh?'zh-CN':'en';
+    nodes.forEach(n=>{ const v=isZh?n.dataset.zh:n.dataset.en; if(v!==undefined && n.innerHTML!==v) n.innerHTML=v; });
     en.classList.toggle('on',!isZh); zh.classList.toggle('on',isZh);
     try{localStorage.setItem('lang',l)}catch(e){}
   }
@@ -2355,8 +2370,14 @@ if(rot){let i=0;setInterval(()=>{i=(i+1)%words.length;rot.style.opacity=0;rot.st
     const r=pin.getBoundingClientRect();
     let p=total>0?(-r.top)/total:0; p=Math.max(0,Math.min(.999,p));
     const idx=Math.min(n-1,Math.floor(p*n));
+    const pinned=matchMedia('(min-width:821px)').matches; // 桌面才钉住+单图切换
     items.forEach((it,i)=>it.classList.toggle('active',i===idx));
-    viss.forEach((v,i)=>v.classList.toggle('active',i===idx));
+    viss.forEach((v,i)=>{
+      const on=i===idx; v.classList.toggle('active',on);
+      const vid=v.querySelector('video'); if(!vid)return;
+      if(pinned){ if(on){ vid.play&&vid.play().catch(()=>{}); } else { vid.pause&&vid.pause(); } }
+      else { vid.play&&vid.play().catch(()=>{}); } // 移动端横向并排:全部静音循环播放
+    });
   }
   addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
 })();
