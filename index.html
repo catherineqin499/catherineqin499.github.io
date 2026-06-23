@@ -2012,6 +2012,7 @@ addEventListener('scroll',()=>{if(spread)spread.style.transform='translateY('+(s
     document.body.classList.toggle('zh',isZh);
     document.documentElement.lang=isZh?'zh-CN':'en';
     nodes.forEach(n=>{ const v=isZh?n.dataset.zh:n.dataset.en; if(v!==undefined && n.innerHTML!==v) n.innerHTML=v; });
+    const cv=document.querySelector('.p-cta'); if(cv) cv.href = isZh ? 'assets/Catherine-CV-CN.pdf' : 'assets/Catherine-CV.pdf';
     en.classList.toggle('on',!isZh); zh.classList.toggle('on',isZh);
     try{localStorage.setItem('lang',l)}catch(e){}
   }
