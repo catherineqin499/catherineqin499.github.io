@@ -234,7 +234,13 @@ p.lead{font-size:clamp(16px,1.6vw,20px);color:var(--ink-60);max-width:60ch;line-
   .sf-item.active .sf-t{color:var(--ink)}
   .sf-item .sf-desc{grid-template-rows:1fr;opacity:1}
   .sf-visuals{position:static;height:auto;aspect-ratio:auto;border:0;display:flex;flex-direction:row;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
-  .sf-vis{position:static;opacity:1;transform:none;flex:0 0 82vw;height:auto;aspect-ratio:16/10;border-radius:14px;overflow:hidden;border:3px solid #101010;background:#0a0908;scroll-snap-align:center}
+  .sf-vis{position:relative;opacity:1;transform:none;flex:0 0 82vw;height:auto;aspect-ratio:16/10;border-radius:14px;overflow:hidden;border:3px solid #101010;background:#0a0908;scroll-snap-align:center}
+  /* 移动端:视频配到各模块下方(JS 加 .sfm),隐藏底部横向面板 */
+  #skills.sfm .sf-visuals{display:none}
+  #skills.sfm .sf-item .sf-vis{display:block;flex:none;width:100%;margin-top:16px;scroll-snap-align:none}
+  #skills.sfm .sf-item{opacity:1;transition:opacity .35s}
+  #skills.sfm .sf-item:not(.active){opacity:.5}
+  #skills.sfm .sf-item.active .sf-t{color:var(--accent)}
   .sf-visuals::-webkit-scrollbar{display:none}
   .sf-visuals{scrollbar-width:none}
 }
@@ -2357,29 +2363,61 @@ if(rot){let i=0;setInterval(()=>{i=(i+1)%words.length;rot.style.opacity=0;rot.st
   els.forEach(el=>io.observe(el));
 })();
 
-/* Skills · 钉住滚动：左侧手风琴展开 + 右侧大图切换 */
+/* Skills · 桌面:钉住滚动左侧手风琴+右侧大图切换; 移动端:每个模块下方配视频,滚到谁播谁 */
 (function(){
   const sec=document.getElementById('skills'); if(!sec)return;
   const pin=sec.querySelector('.sf-pin');
+  const panel=sec.querySelector('.sf-visuals');
   const items=[...sec.querySelectorAll('.sf-item')];
   const viss=[...sec.querySelectorAll('.sf-vis')];
   if(!pin||!items.length)return;
   const n=items.length;
+  const mq=matchMedia('(max-width:820px)');
+  let mode=null, io=null;
+  /* 桌面:滚动进度驱动单图交叉淡切,只播当前 */
   function upd(){
+    if(mode!=='desktop')return;
     const total=pin.offsetHeight-innerHeight;
     const r=pin.getBoundingClientRect();
     let p=total>0?(-r.top)/total:0; p=Math.max(0,Math.min(.999,p));
     const idx=Math.min(n-1,Math.floor(p*n));
-    const pinned=matchMedia('(min-width:821px)').matches; // 桌面才钉住+单图切换
     items.forEach((it,i)=>it.classList.toggle('active',i===idx));
     viss.forEach((v,i)=>{
       const on=i===idx; v.classList.toggle('active',on);
       const vid=v.querySelector('video'); if(!vid)return;
-      if(pinned){ if(on){ vid.play&&vid.play().catch(()=>{}); } else { vid.pause&&vid.pause(); } }
-      else { vid.play&&vid.play().catch(()=>{}); } // 移动端横向并排:全部静音循环播放
+      if(on){ vid.play&&vid.play().catch(()=>{}); } else { vid.pause&&vid.pause(); }
     });
   }
-  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  function toDesktop(){
+    if(mode==='desktop')return; mode='desktop';
+    sec.classList.remove('sfm');
+    if(io){io.disconnect();io=null;}
+    viss.forEach(v=>panel.appendChild(v)); // 视频归位到右侧面板
+    upd();
+  }
+  function toMobile(){
+    if(mode==='mobile')return; mode='mobile';
+    sec.classList.add('sfm');
+    items.forEach((it,i)=>{ if(viss[i]) it.appendChild(viss[i]); }); // 视频移到各模块下方
+    const ratio=new Map();
+    io=new IntersectionObserver(es=>{
+      es.forEach(e=>ratio.set(e.target, e.isIntersecting?e.intersectionRatio:0));
+      let best=null,bv=0;
+      viss.forEach(v=>{const r=ratio.get(v)||0; if(r>bv){bv=r;best=v;}});
+      viss.forEach(v=>{
+        const it=v.closest('.sf-item'); const vid=v.querySelector('video');
+        const isBest=(v===best && bv>0);
+        if(it) it.classList.toggle('active',isBest);            // 高亮当前模块
+        if(vid){ if(isBest && bv>0.4){ vid.play&&vid.play().catch(()=>{}); } else { vid.pause&&vid.pause(); } }
+      });
+    },{threshold:[0,0.25,0.5,0.75,1]});
+    viss.forEach(v=>io.observe(v));
+  }
+  function apply(){ mq.matches?toMobile():toDesktop(); }
+  apply();
+  mq.addEventListener('change',apply);
+  addEventListener('scroll',upd,{passive:true});
+  addEventListener('resize',upd);
 })();
 
 /* 关于我 · 钉住滚动切换四模块 */
